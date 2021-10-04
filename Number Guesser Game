@@ -1,0 +1,29 @@
+let humanScore = 0;
+let computerScore = 0;
+let currentRoundNumber = 1;
+
+// generates random target number
+const generateTarget = () => Math.floor(Math.random() * 10)
+const targetGuess = generateTarget()
+// determines winner
+const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
+  const humanDiff = Math.abs(humanGuess - targetGuess);
+  const computerDiff = Math.abs(computerGuess - targetGuess);
+    if (humanDiff <= computerDiff) {
+    return true
+  } else {
+    return false
+  }
+}
+// score tallying
+const updateScore = winner => {
+  if (result === 'human') {
+    humanScore += 1
+  } else {
+    computerScore += 1
+  }
+}
+// round advancing
+function advanceRound() {
+  currentRoundNumber++
+}
